@@ -46,6 +46,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = {
         {
+            "NMAC427/guess-indent.nvim",
+            opts = {},
+        },
+        {
             {
                 "folke/tokyonight.nvim",
                 lazy = false,
@@ -72,7 +76,7 @@ require("lazy").setup({
             build = ':TSUpdate',
             main = 'nvim-treesitter.configs', -- Sets main module to use for opts
             opts = {
-                ensure_installed = {"python", "lua", "bash", "tmux", "go", "rust", "c"},
+                ensure_installed = {"python", "lua", "bash", "tmux", "go", "rust", "c", "cmake"},
             },
         },
     },
