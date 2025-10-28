@@ -5,6 +5,7 @@ vim.o.relativenumber = true
 vim.o.showmode = false
 vim.o.ignorecase = true
 vim.o.smartcase = true
+vim.o.wrap = false
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
@@ -48,6 +49,16 @@ require("lazy").setup({
         {
             "NMAC427/guess-indent.nvim",
             opts = {},
+        },
+        {
+            "nvim-mini/mini.nvim",
+            version = false,
+            config = function()
+                require("mini.pick").setup()
+                vim.keymap.set("n", "<leader>ff", MiniPick.builtin.files)
+                vim.keymap.set("n", "<leader>bb", MiniPick.builtin.buffers)
+                vim.keymap.set("n", "<leader>hh", MiniPick.builtin.help)
+            end
         },
         {
             {
